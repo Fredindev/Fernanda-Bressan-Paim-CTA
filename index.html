@@ -13,6 +13,7 @@
     <header>
         <div class="header-content">
             <img src="/assets/LOGO PNG.png" alt="Logo Fernanda Paim - Método CARES" class="logo-image">
+            <p class="regra-connectam">REGRAS QUE CONECTAM</p>
             
             <!-- <nav class="main-nav">
                 <a href="#">Início</a>
@@ -25,7 +26,7 @@
     <div class="capture-container">
         <main class="content-area">
             
-            <p class="regra-connectam">REGRAS QUE CONECTAM</p>
+            
             
             <h1 class="title">DO CAOS À CONEXÃO</h1>
             
@@ -46,21 +47,20 @@
                     Preencha os dados abaixo para receber o link do evento diretamente no seu e-mail e WhatsApp.
                 </p>
                 
-                <form id="inscription-form">
-                    
+                <form id="inscription-form" action="https://formspree.io/f/seu-codigo-aqui" method="POST">
                     <div class="input-group">
                         <label for="nome">Seu Nome</label>
-                        <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required>
                     </div>
 
                     <div class="input-group">
                         <label for="email">Seu e-mail</label>
-                        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
                     </div>
 
                     <div class="input-group">
                         <label for="whatsapp">Seu WhatsApp (com DDD)</label>
-                        <input type="tel" id="whatsapp" placeholder="Ex: (11) 99999-9999" pattern="[0-9]{10,11}" title="Apenas números (Ex: 11999998888)" required>
+                        <input type="tel" name="whatsapp" id="whatsapp" placeholder="Ex: (11) 99999-9999" pattern="[0-9]{10,11}" title="Apenas números (Ex: 11999998888)" required>
                     </div>
                     
                     <button type="submit" id="submit-button" class="pulse-button">
