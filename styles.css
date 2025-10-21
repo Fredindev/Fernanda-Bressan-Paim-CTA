@@ -1,0 +1,399 @@
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('../fonts/GlacialIndifference/GlacialIndifference-Regular.woff2')
+       format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('../fonts/GlacialIndifference/GlacialIndifference-Bold.woff2')
+       format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+    /* Paleta de Cores baseada na SEGUNDA IMAGEM (Método CARES) */
+    --cor-fundo-principal: #11255A; /* Azul escuro do fundo */
+    --cor-texto-principal: #FFF4EB;
+    --cor-titulo-principal: #B88A44; /* Dourado/Bege nos títulos e logo */
+    
+    /* Cores do Formulário - Ajustadas para a Segunda Imagem */
+    --cor-fundo-formulario: #1E3799; /* Fundo mais claro que o principal */
+    --cor-botao-principal: #B88A44; /* Amarelo/Dourado do botão na segunda imagem */
+    --cor-input-bg: #4a6699; /* Fundo do input mais escuro que o form */
+    --cor-input-placeholder: #cccccc;
+    --cor-header-bg: #1a2c53;
+}
+
+/* ------------------------------------- */
+/* Estilo Base e No Scroll (Desktop) */
+/* ------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Evita rolagem no desktop */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Evita rolagem no desktop */
+}
+
+body {
+    font-family: 'Glacial Indifference', sans-serif;
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo-principal); 
+    display: flex;
+    flex-direction: column; /* Permite que o header, container e footer se organizem verticalmente */
+}
+
+/* ------------------------------------- */
+/* Header e Logo */
+/* ------------------------------------- */
+header {
+    width: 100%;
+    padding: 5px 5%;
+    background-color: var(--cor-header-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* Impede que o header seja espremido */
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.logo-image {
+    height: 60px; /* Ajuste o tamanho do logo conforme necessário */
+    width: auto;
+    border-radius: 50%; /* O logo é redondo/oval */
+}
+
+.main-nav a {
+    color: var(--cor-texto-principal);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.main-nav .btn-inscrever {
+    border: 1px solid var(--cor-titulo-principal);
+    border-radius: 5px;
+}
+
+/* ------------------------------------- */
+/* Estrutura Principal (Central) */
+/* ------------------------------------- */
+/* Container Principal (Desktop: Flex horizontal) */
+.capture-container {
+    display: flex;
+    flex-grow: 1; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5%;
+    overflow-y: auto; 
+}
+
+/* Área de Conteúdo (Desktop: Flex vertical/default) */
+.content-area {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px; 
+    display: flex;
+    flex-direction: column; /* Organiza Texto e Formulário verticalmente no desktop */
+    justify-content: center; 
+}
+
+/* Área Lateral (Desktop: Direita) */
+.side-area {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.image-area {
+    flex-shrink: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center top; 
+    background-repeat: no-repeat;
+    height: 80%; /* Ocupa 60% da altura lateral */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ------------------------------------- */
+/* Sobre a Autora (na lateral) */
+/* ------------------------------------- */
+.author-area {
+    flex-grow: 1; /* Ocupa o restante da altura na lateral */
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1); /* Fundo sutil para destaque */
+}
+
+.author-area h2 {
+    font-family: 'Vidaloka', sans-serif;
+    font-size: 1.2rem;
+    color: var(--cor-titulo-principal);
+    margin-bottom: 5px;
+}
+
+.author-area p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #cccccc;
+}
+
+/* ------------------------------------- */
+/* Títulos e Formulário (Estilos permanecem) */
+/* ------------------------------------- */
+.regra-connectam {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--cor-titulo-principal);
+    margin-bottom: 5px;
+}
+
+.title {
+    font-family: 'Vidaloka', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--cor-titulo-principal);
+    text-transform: uppercase;
+}
+/* ------------------------------------- */
+/* Formulário (Estilo da 2ª Imagem) */
+/* ------------------------------------- */
+.form-section-style2 {
+    /* Fundo azul claro/cinza conforme o bloco do formulário na imagem 2 */
+    background-color: #334e80; 
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 450px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    margin-top: 30px;
+    /* Centraliza na área de conteúdo (se a área de conteúdo for maior que 450px) */
+    align-self: center; 
+}
+
+.form-instruction {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.form-subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 25px; /* Aumentei a margem para separar do form */
+    color: #cccccc;
+}
+
+#inscription-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+    font-weight: 400; /* Mais leve */
+    color: #cccccc; /* Cor do título do campo */
+}
+
+#inscription-form input {
+    padding: 12px;
+    /* Borda e fundo escuros como no formulário da segunda imagem */
+    border: 1px solid #4a6699; 
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #4a6699; 
+    color: var(--cor-texto-principal);
+}
+
+#inscription-form input::placeholder {
+    color: #a0aec0; /* Placeholder mais claro */
+}
+
+/* Botão Pulsando (Amarelo/Dourado) */
+#submit-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: var(--cor-botao-principal); /* Dourado */
+    color: var(--cor-fundo-principal); /* Texto Azul Escuro */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5); /* Sombra Dourada */
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+/* Efeito Pulsar (Keyframes Dourado) */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); /* Cor da sombra Dourada */
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 215, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+
+/* (Continuação dos estilos de form, inputs e botão pulsar...) */
+
+.input-group label {
+    color: var(--cor-input-placeholder);
+}
+
+#inscription-form input {
+    background-color: var(--cor-input-bg);
+    color: var(--cor-texto-principal);
+}
+
+#inscription-form input::placeholder {
+    color: var(--cor-input-placeholder);
+}
+
+#submit-button {
+    background-color: var(--cor-botao-principal); 
+    color: var(--cor-fundo-principal); 
+    box-shadow: 0 4px 15px rgba(162, 207, 108, 0.5);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(162, 207, 108, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(162, 207, 108, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(162, 207, 108, 0); }
+}
+
+
+/* ------------------------------------- */
+/* Rodapé */
+/* ------------------------------------- */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #99a2b5;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-shrink: 0; /* Impede que o footer seja espremido */
+}
+
+
+/* ------------------------------------- */
+/* RESPONSIVIDADE (Mobile e Tablet) */
+/* ------------------------------------- */
+
+@media (max-width: 900px) {
+    /* Habilita rolagem e ajusta o layout para vertical */
+    html, body {
+        height: auto;
+        overflow-y: auto; 
+    }
+
+    /* 1. Mudar o Container Principal para Coluna */
+    .capture-container {
+        flex-direction: column;
+        padding: 20px;
+        margin: 0;
+        overflow-y: visible;
+        flex-grow: 0;
+    }
+
+    /* 2. Aplicar ORDEM no Container Principal */
+    /* A ordem será controlada internamente pelos filhos */
+    .content-area {
+        order: 1; /* Garante que o MAIN venha antes do ASIDE */
+        padding-right: 0; 
+        padding-left: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .side-area {
+        order: 2; /* Garante que o ASIDE venha após o MAIN */
+        padding-left: 0;
+    }
+    
+    /* 3. Reorganizar os ELEMENTOS dentro do MAIN (content-area) */
+    /* O Main precisa ser um container flex para que o order funcione em seus filhos */
+    .content-area {
+        display: flex;
+        flex-direction: column; /* Essencial para que os filhos do main sejam empilhados */
+    }
+
+    /* Subseções dentro do MAIN e ASIDE */
+    
+    /* 1º - Texto Introdutório */
+    .intro-text {
+        order: 1;
+        margin-bottom: 30px;
+    }
+    
+    /* 2º - Imagem e Sobre a Autora (Bloco .side-area) */
+    /* O side-area já está na ordem 2 */
+    .image-area {
+        height: 520px;
+    }
+    .author-area {
+        /* Garante que o 'Sobre a Autora' use 100% da largura no mobile */
+        margin-bottom: 20px;
+    }
+
+    /* 3º - Formulário Completo (Bloco .form-section-style2) */
+    .form-section-style2 {
+        order: 3; /* Força o formulário a ser o último elemento do MAIN */
+        margin-top: 25px;
+        max-width: 100%;
+        align-self: flex-start; 
+    }
+    
+    /* Ajustes gerais de mobile */
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .title {
+        font-size: 2rem;
+    }
+}
